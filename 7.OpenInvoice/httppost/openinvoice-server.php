@@ -49,7 +49,8 @@
  *
  */
  
- $orderLines = null;
+ // this needs to be an empty string as Adyen can fail with a 115 response.
+ $orderLines = ''; 
  
  /**
   * Authorisation / Capture
@@ -94,4 +95,5 @@
  	$orderLines .= "openInvoiceDetailResult.lines.0.vatCategory=High";
  }
  
- print $orderLines;
+ // trailing or leading whitespace can cause failure with a 115 error. 
+ print trim($orderLines);
