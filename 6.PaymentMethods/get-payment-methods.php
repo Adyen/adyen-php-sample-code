@@ -27,7 +27,7 @@
   * service. 
   */
  $request = array(
-	"paymentAmount" => "0",
+	"paymentAmount" => "100",
 	"currencyCode" => "EUR",
 	"merchantReference" => "Request payment methods",
 	"skinCode" => "YourSkinCode",
