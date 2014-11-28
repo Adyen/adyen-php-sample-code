@@ -50,7 +50,9 @@
 	
 	case 'AUTHORISATION':
 			// Handle AUTHORISATION notification.
-			// Confirms that the payment was authorised successfully. 
+			// This doesn't necessarily mean that the authorisation is successful. 
+			// The authorisation is successful if the success feld has the value “true”. In case of an error or a refusal, it will be “false” and the
+			// reason feld should be consulted for the cause of the authorisation failure.
 		break;
 		
 	case 'CANCELLATION':
