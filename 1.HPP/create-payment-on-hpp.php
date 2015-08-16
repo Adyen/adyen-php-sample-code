@@ -81,21 +81,21 @@
   
 ?>
 <form method="GET" action="https://test.adyen.com/hpp/pay.shtml" target="_blank">
-	<input type="hidden" name="merchantReference" value="<?=$merchantReference ?>"/>
-	<input type="hidden" name="paymentAmount" value="<?=$paymentAmount ?>"/>
-	<input type="hidden" name="currencyCode" value="<?=$currencyCode ?>"/>
-	<input type="hidden" name="shipBeforeDate" value="<?=$shipBeforeDate ?>"/>
-	<input type="hidden" name="skinCode" value="<?=$skinCode ?>"/>
-	<input type="hidden" name="merchantAccount" value="<?=$merchantAccount ?>"/>
-	<input type="hidden" name="sessionValidity" value="<?=$sessionValidity ?>"/>
-	<input type="hidden" name="shopperLocale" value="<?=$shopperLocale ?>"/>
-	<input type="hidden" name="orderData" value="<?=$orderData ?>"/>
-	<input type="hidden" name="countryCode" value="<?=$countryCode ?>"/>
-	<input type="hidden" name="shopperEmail" value="<?=$shopperEmail ?>"/>
-	<input type="hidden" name="shopperReference" value="<?=$shopperReference ?>"/>
-	<input type="hidden" name="allowedMethods" value="<?=$allowedMethods ?>"/>
-	<input type="hidden" name="blockedMethods" value="<?=$blockedMethods ?>"/>
-	<input type="hidden" name="offset" value="<?=$offset ?>"/>
-	<input type="hidden" name="merchantSig" value="<?=$merchantSig ?>"/>	
+	<input type="hidden" name="merchantReference" value="<?php=$merchantReference ?>"/>
+	<input type="hidden" name="paymentAmount" value="<?php=$paymentAmount ?>"/>
+	<input type="hidden" name="currencyCode" value="<?php=$currencyCode ?>"/>
+	<input type="hidden" name="shipBeforeDate" value="<?php=$shipBeforeDate ?>"/>
+	<input type="hidden" name="skinCode" value="<?php=$skinCode ?>"/>
+	<input type="hidden" name="merchantAccount" value="<?php=$merchantAccount ?>"/>
+	<input type="hidden" name="sessionValidity" value="<?php=$sessionValidity ?>"/>
+	<input type="hidden" name="shopperLocale" value="<?php=$shopperLocale ?>"/>
+	<input type="hidden" name="orderData" value="<?php=$orderData ?>"/>
+	<input type="hidden" name="countryCode" value="<?php=$countryCode ?>"/>
+	<input type="hidden" name="shopperEmail" value="<?php=$shopperEmail ?>"/>
+	<input type="hidden" name="shopperReference" value="<?php=$shopperReference ?>"/>
+	<input type="hidden" name="allowedMethods" value="<?php=$allowedMethods ?>"/>
+	<input type="hidden" name="blockedMethods" value="<?php=$blockedMethods ?>"/>
+	<input type="hidden" name="offset" value="<?php=$offset ?>"/>
+	<input type="hidden" name="merchantSig" value="<?php=$merchantSig ?>"/>	
 	<input type="submit" value="Create payment" />
 </form>
