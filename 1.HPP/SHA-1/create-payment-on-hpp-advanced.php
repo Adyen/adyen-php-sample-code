@@ -226,61 +226,61 @@
 
 ?>
 <form method="POST" action="https://test.adyen.com/hpp/pay.shtml" target="_blank">
-	<input type="hidden" name="merchantReference" value="<?=$merchantReference ?>"/>
-	<input type="hidden" name="paymentAmount" value="<?=$paymentAmount ?>"/>
-	<input type="hidden" name="currencyCode" value="<?=$currencyCode ?>"/>
-	<input type="hidden" name="shipBeforeDate" value="<?=$shipBeforeDate ?>"/>
-	<input type="hidden" name="skinCode" value="<?=$skinCode ?>"/>
-	<input type="hidden" name="merchantAccount" value="<?=$merchantAccount ?>"/>
-	<input type="hidden" name="sessionValidity" value="<?=$sessionValidity ?>"/>
-	<input type="hidden" name="shopperLocale" value="<?=$shopperLocale ?>"/>
-	<input type="hidden" name="orderData" value="<?=$orderData ?>"/>
-	<input type="hidden" name="countryCode" value="<?=$countryCode ?>"/>
-	<input type="hidden" name="shopperEmail" value="<?=$shopperEmail ?>"/>
-	<input type="hidden" name="shopperReference" value="<?=$shopperReference ?>"/>
-	<input type="hidden" name="recurringContract" value="<?=$recurringContract ?>"/>
-	<input type="hidden" name="allowedMethods" value="<?=$allowedMethods ?>"/>
-	<input type="hidden" name="blockedMethods" value="<?=$blockedMethods ?>"/>
-	<input type="hidden" name="shopperStatement" value="<?=$shopperStatement ?>"/>
-	<input type="hidden" name="merchantReturnData" value="<?=$merchantReturnData ?>"/>
-	<input type="hidden" name="offset" value="<?=$offset ?>"/>
-	<input type="hidden" name="brandCode" value="<?=$brandCode ?>"/>
-	<input type="hidden" name="issuerId" value="<?=$issuerId ?>"/>
+	<input type="hidden" name="merchantReference" value="<?php echo $merchantReference ?>"/>
+	<input type="hidden" name="paymentAmount" value="<?php echo $paymentAmount ?>"/>
+	<input type="hidden" name="currencyCode" value="<?php echo $currencyCode ?>"/>
+	<input type="hidden" name="shipBeforeDate" value="<?php echo $shipBeforeDate ?>"/>
+	<input type="hidden" name="skinCode" value="<?php echo $skinCode ?>"/>
+	<input type="hidden" name="merchantAccount" value="<?php echo $merchantAccount ?>"/>
+	<input type="hidden" name="sessionValidity" value="<?php echo $sessionValidity ?>"/>
+	<input type="hidden" name="shopperLocale" value="<?php echo $shopperLocale ?>"/>
+	<input type="hidden" name="orderData" value="<?php echo $orderData ?>"/>
+	<input type="hidden" name="countryCode" value="<?php echo $countryCode ?>"/>
+	<input type="hidden" name="shopperEmail" value="<?php echo $shopperEmail ?>"/>
+	<input type="hidden" name="shopperReference" value="<?php echo $shopperReference ?>"/>
+	<input type="hidden" name="recurringContract" value="<?php echo $recurringContract ?>"/>
+	<input type="hidden" name="allowedMethods" value="<?php echo $allowedMethods ?>"/>
+	<input type="hidden" name="blockedMethods" value="<?php echo $blockedMethods ?>"/>
+	<input type="hidden" name="shopperStatement" value="<?php echo $shopperStatement ?>"/>
+	<input type="hidden" name="merchantReturnData" value="<?php echo $merchantReturnData ?>"/>
+	<input type="hidden" name="offset" value="<?php echo $offset ?>"/>
+	<input type="hidden" name="brandCode" value="<?php echo $brandCode ?>"/>
+	<input type="hidden" name="issuerId" value="<?php echo $issuerId ?>"/>
 	
 	<!-- Billing address -->
-	<input type="hidden" name="billingAddress.street" value="<?=$shopperInfo["billing"]["billingAddress.street"] ?>"/>
-	<input type="hidden" name="billingAddress.houseNumberOrName" value="<?=$shopperInfo["billing"]["billingAddress.houseNumberOrName"] ?>"/>
-	<input type="hidden" name="billingAddress.city" value="<?=$shopperInfo["billing"]["billingAddress.city"] ?>"/>
-	<input type="hidden" name="billingAddress.postalCode" value="<?=$shopperInfo["billing"]["billingAddress.postalCode"] ?>"/>
-	<input type="hidden" name="billingAddress.stateOrProvince" value="<?=$shopperInfo["billing"]["billingAddress.stateOrProvince"] ?>"/>
-	<input type="hidden" name="billingAddress.country" value="<?=$shopperInfo["billing"]["billingAddress.country"] ?>"/>
-	<input type="hidden" name="billingAddressType" value="<?=$shopperInfo["billing"]["billingAddressType"] ?>"/>
+	<input type="hidden" name="billingAddress.street" value="<?php echo $shopperInfo["billing"]["billingAddress.street"] ?>"/>
+	<input type="hidden" name="billingAddress.houseNumberOrName" value="<?php echo $shopperInfo["billing"]["billingAddress.houseNumberOrName"] ?>"/>
+	<input type="hidden" name="billingAddress.city" value="<?php echo $shopperInfo["billing"]["billingAddress.city"] ?>"/>
+	<input type="hidden" name="billingAddress.postalCode" value="<?php echo $shopperInfo["billing"]["billingAddress.postalCode"] ?>"/>
+	<input type="hidden" name="billingAddress.stateOrProvince" value="<?php echo $shopperInfo["billing"]["billingAddress.stateOrProvince"] ?>"/>
+	<input type="hidden" name="billingAddress.country" value="<?php echo $shopperInfo["billing"]["billingAddress.country"] ?>"/>
+	<input type="hidden" name="billingAddressType" value="<?php echo $shopperInfo["billing"]["billingAddressType"] ?>"/>
 	
 	<!-- Delivery address -->
-	<input type="hidden" name="deliveryAddress.street" value="<?=$shopperInfo["delivery"]["deliveryAddress.street"] ?>"/>
-	<input type="hidden" name="deliveryAddress.houseNumberOrName" value="<?=$shopperInfo["delivery"]["deliveryAddress.houseNumberOrName"] ?>"/>
-	<input type="hidden" name="deliveryAddress.city" value="<?=$shopperInfo["delivery"]["deliveryAddress.city"] ?>"/>
-	<input type="hidden" name="deliveryAddress.postalCode" value="<?=$shopperInfo["delivery"]["deliveryAddress.postalCode"] ?>"/>
-	<input type="hidden" name="deliveryAddress.stateOrProvince" value="<?=$shopperInfo["delivery"]["deliveryAddress.stateOrProvince"] ?>"/>
-	<input type="hidden" name="deliveryAddress.country" value="<?=$shopperInfo["delivery"]["deliveryAddress.country"] ?>"/>
-	<input type="hidden" name="deliveryAddressType" value="<?=$shopperInfo["delivery"]["deliveryAddressType"] ?>"/>
+	<input type="hidden" name="deliveryAddress.street" value="<?php echo $shopperInfo["delivery"]["deliveryAddress.street"] ?>"/>
+	<input type="hidden" name="deliveryAddress.houseNumberOrName" value="<?php echo $shopperInfo["delivery"]["deliveryAddress.houseNumberOrName"] ?>"/>
+	<input type="hidden" name="deliveryAddress.city" value="<?php echo $shopperInfo["delivery"]["deliveryAddress.city"] ?>"/>
+	<input type="hidden" name="deliveryAddress.postalCode" value="<?php echo $shopperInfo["delivery"]["deliveryAddress.postalCode"] ?>"/>
+	<input type="hidden" name="deliveryAddress.stateOrProvince" value="<?php echo $shopperInfo["delivery"]["deliveryAddress.stateOrProvince"] ?>"/>
+	<input type="hidden" name="deliveryAddress.country" value="<?php echo $shopperInfo["delivery"]["deliveryAddress.country"] ?>"/>
+	<input type="hidden" name="deliveryAddressType" value="<?php echo $shopperInfo["delivery"]["deliveryAddressType"] ?>"/>
 	
 	<!-- Shopper -->
-	<input type="hidden" name="shopper.firstName" value="<?=$shopperInfo["shopper"]["shopper.firstName"] ?>"/>
-	<input type="hidden" name="shopper.infix" value="<?=$shopperInfo["shopper"]["shopper.infix"] ?>"/>
-	<input type="hidden" name="shopper.lastName" value="<?=$shopperInfo["shopper"]["shopper.lastName"] ?>"/>
-	<input type="hidden" name="shopper.gender" value="<?=$shopperInfo["shopper"]["shopper.gender"] ?>"/>
-	<input type="hidden" name="shopper.dateOfBirthDayOfMonth" value="<?=$shopperInfo["shopper"]["shopper.dateOfBirthDayOfMonth"] ?>"/>
-	<input type="hidden" name="shopper.dateOfBirthMonth" value="<?=$shopperInfo["shopper"]["shopper.dateOfBirthMonth"] ?>"/>
-	<input type="hidden" name="shopper.dateOfBirthYear" value="<?=$shopperInfo["shopper"]["shopper.dateOfBirthYear"] ?>"/>
-	<input type="hidden" name="shopper.telephoneNumber" value="<?=$shopperInfo["shopper"]["shopper.telephoneNumber"] ?>"/>
-	<input type="hidden" name="shopperType" value="<?=$shopperInfo["shopper"]["shopperType"] ?>"/>
+	<input type="hidden" name="shopper.firstName" value="<?php echo $shopperInfo["shopper"]["shopper.firstName"] ?>"/>
+	<input type="hidden" name="shopper.infix" value="<?php echo $shopperInfo["shopper"]["shopper.infix"] ?>"/>
+	<input type="hidden" name="shopper.lastName" value="<?php echo $shopperInfo["shopper"]["shopper.lastName"] ?>"/>
+	<input type="hidden" name="shopper.gender" value="<?php echo $shopperInfo["shopper"]["shopper.gender"] ?>"/>
+	<input type="hidden" name="shopper.dateOfBirthDayOfMonth" value="<?php echo $shopperInfo["shopper"]["shopper.dateOfBirthDayOfMonth"] ?>"/>
+	<input type="hidden" name="shopper.dateOfBirthMonth" value="<?php echo $shopperInfo["shopper"]["shopper.dateOfBirthMonth"] ?>"/>
+	<input type="hidden" name="shopper.dateOfBirthYear" value="<?php echo $shopperInfo["shopper"]["shopper.dateOfBirthYear"] ?>"/>
+	<input type="hidden" name="shopper.telephoneNumber" value="<?php echo $shopperInfo["shopper"]["shopper.telephoneNumber"] ?>"/>
+	<input type="hidden" name="shopperType" value="<?php echo $shopperInfo["shopper"]["shopperType"] ?>"/>
 		
 	<!-- Signatures -->
-	<input type="hidden" name="billingAddressSig" value="<?=$billingAddressSig ?>"/>
-	<input type="hidden" name="deliveryAddressSig" value="<?=$deliveryAddressSig ?>"/>
-	<input type="hidden" name="shopperSig" value="<?=$shopperSig ?>"/>
-	<input type="hidden" name="merchantSig" value="<?=$merchantSig ?>"/>
+	<input type="hidden" name="billingAddressSig" value="<?php echo $billingAddressSig ?>"/>
+	<input type="hidden" name="deliveryAddressSig" value="<?php echo $deliveryAddressSig ?>"/>
+	<input type="hidden" name="shopperSig" value="<?php echo $shopperSig ?>"/>
+	<input type="hidden" name="merchantSig" value="<?php echo $merchantSig ?>"/>
 	
 	<input type="submit" value="Create payment" />
 </form>
