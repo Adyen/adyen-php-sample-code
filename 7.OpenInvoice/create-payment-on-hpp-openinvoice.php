@@ -12,7 +12,7 @@
     $countryCode = "NL";
     $shopperEmail = "test@adyen.com";
     $shopperReference = "TestShopper-1";
-    $recurringContract = "RECURRING";
+    $recurringContract = "";
     $allowedMethods = "";
     $blockedMethods = "";
     $shopperStatement = "";
