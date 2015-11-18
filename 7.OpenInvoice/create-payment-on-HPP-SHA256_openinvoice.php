@@ -41,6 +41,7 @@
                     "shopper.dateOfBirthYear"=> "1970",
                     "shopper.gender"=> "MALE",
                     "shopper.telephoneNumber"=> "0104691602",
+                    "shopperType" => "1",
                     
                     // Billing Address fields (used for AVS checks)
                     "billingAddress.street" =>"Neherkade",
@@ -49,7 +50,7 @@
                     "billingAddress.postalCode" => "2521VA",
                     "billingAddress.stateOrProvince" => "NH",
                     "billingAddress.country" => "NL",
-                    "billingAddressType" => "",
+                    "billingAddressType" => "1",
                     
                     // Delivery/Shipping Address fields
                     "deliveryAddress.street" => "Neherkade",
@@ -58,7 +59,7 @@
                     "deliveryAddress.postalCode" => "2521VA",
                     "deliveryAddress.stateOrProvince" => "NH",
                     "deliveryAddress.country" => "NL",
-                    "deliveryAddressType" => "",
+                    "deliveryAddressType" => "1",
                     
                     // Invoice lines for Open Invoice payment methods such as Klarna and Afterpay
                     "openinvoicedata.numberOfLines"=>"4",
