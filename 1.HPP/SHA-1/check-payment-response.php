@@ -4,15 +4,15 @@
  * 
  * Whenever a payment is made, the shopper is redirected either to a default 
  * or custom result page. Parameters are appended to this url to provide 
- * a status and general infoamtion about the payment.  
- *
+ * a status and general information about the payment.
+ * 
  *  
  * @link	1.HPP/check-payment-response.php 
  * @author	Created by Adyen - Payments Made Easy
  */
  
 /**
- * The variabele $_GET contains an array including 
+ * The variable $_GET contains an array including 
  * the following keys when avaialble:
  * 
  * $_GET['authResult']
@@ -26,12 +26,15 @@
  * Note that additional parameters may be available but not necessary in the
  * merchant signature check when using a SHA1 key.
  *
- * We recommend you to check the consistency of the URL parameters to esure
- * that the data has not been tampered with. 
- * The merchantSig parameter allows you to check it since it is computed using
- * the URL parameters and the HMAC key, same key you used to make the original
- * payment request on our HPP.
- *
+ * We recommend you to check the consistency of the URL parameters to ensure
+ * that the data has not been tampered with, especially when you show
+ * customer/order specific information on the result page, or make updates
+ * to a back office system based on this data.
+ * For this purpose, an HMAC is added to the query string parameters and can be
+ * used to verify the data. The HMAC key which is set on the skin (used for 
+ * the initial payment request) is also used for the calculation of this result
+ * URL parameter.
+ * 
  */
 
   $hmacKey = "[Your shared Hmac key]"; 
