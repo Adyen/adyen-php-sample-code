@@ -114,7 +114,7 @@ $shopperInfo= array(
 					"airline.leg1.stop_over_code" => "X",
 					"airline.leg1.destination_code" => "AMS",
 					"airline.leg1.date_of_travel" => "2015-02-19 00:00",
-					"airline.leg1.depart_tax" => "396.00",
+					"airline.leg1.depart_tax" => "396",
 
 					"airline.leg2.depart_airport" => "PVG",
 					"airline.leg2.flight_number" => "369",
@@ -124,7 +124,7 @@ $shopperInfo= array(
 					"airline.leg2.stop_over_code" => "0",
 					"airline.leg2.destination_code" => "LTN",
 					"airline.leg2.date_of_travel" => "2015-02-20 00:00",
-					"airline.leg2.depart_tax" => "0.00",
+					"airline.leg2.depart_tax" => "0",
 		);
 
 //Optional lodging data can be specified in this array
