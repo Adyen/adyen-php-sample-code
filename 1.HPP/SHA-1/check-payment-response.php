@@ -7,7 +7,7 @@
  * a status and general infoamtion about the payment.  
  *
  *  
- * @link    1.HPP/check-payment-response.php 
+ * @link	1.HPP/check-payment-response.php 
  * @author	Created by Adyen - Payments Made Easy
  */
  
@@ -23,7 +23,9 @@
  * $_GET['skinCode']
  * $_GET['merchantReturnData']
  * 
- * 
+ * Note that additional parameters may be available but not necessary in the
+ * merchant signature check when using a SHA1 key.
+ *
  * We recommend you to check the consistency of the URL parameters to esure
  * that the data has not been tampered with. 
  * The merchantSig parameter allows you to check it since it is computed using
@@ -36,24 +38,15 @@
 
   // Retrieve the URL parameters
   $res_merchantSig = $_GET['merchantSig'];
-  $params = array(
-    "authResult" => $_GET['authResult'],
-    "merchantReference" => $_GET['merchantReference'],
-    "paymentMethod" => $_GET['paymentMethod'],
-    "pspReference" => $_GET['pspReference'],
-    "shopperLocale" => $_GET['shopperLocale'],
-    "skinCode" => $_GET['skinCode'],
-    "merchantReturnData" => $_GET['merchantReturnData'],
-  );
 
   // Calculate the expected merchant signature using these URL parameters
   $merchantSig = base64_encode(pack("H*",hash_hmac('sha1',
-  	$params['authResult'] . $params['pspReference'] . $params['merchantReference'] . 
-  	$params['skinCode'] . $params['merchantReturnData'], 
+  	$_GET['authResult'] . $_GET['pspReference'] . $_GET['merchantReference'] . 
+  	$_GET['skinCode'] . $_GET['merchantReturnData'], 
   	$hmacKey)));
 
   // Compare the calculated signature with the signature from the URL parameters
-  if ($merchantSig == $res_merchantSig)
+  if ($merchantSig === $res_merchantSig)
     print "Correct merchant signature";
   else
     print "Incorrect merchant signature";
