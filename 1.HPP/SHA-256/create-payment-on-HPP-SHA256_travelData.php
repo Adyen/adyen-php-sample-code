@@ -63,7 +63,7 @@
                     "airline.passenger_name" => "Kate Winslet",
                     "airline.ticket_number" => "XC123",
                     "airline.airline_code" => "111",
-                    "airline.travel_agency_code" => "UNKNOWN",
+                    "airline.travel_agency_code" => "000000",
                     "airline.travel_agency_name" => "UNKNOWN",
                     "airline.customer_reference_number" => "******5837",
                     "airline.ticket_issue_address" => "YREWX08AA",
@@ -87,7 +87,7 @@
                     "airline.leg1.stop_over_code" => "X",
                     "airline.leg1.destination_code" => "AMS",
                     "airline.leg1.date_of_travel" => "2015-02-19 00:00",
-                    "airline.leg1.depart_tax" => "396.00",
+                    "airline.leg1.depart_tax" => "396",
                     
                     // Optional lodging data lines
                     "lodging.checkInDate" => "20150607",
