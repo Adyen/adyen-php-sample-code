@@ -34,6 +34,7 @@
                     
                     // Shopper information
                     "shopper.firstName"=> "Testperson-nl",
+                    "shopper.infix"=> "-",
                     "shopper.lastName"=> "Approved",
                     "shopper.dateOfBirthDayOfMonth"=> "10",
                     "shopper.dateOfBirthMonth"=> "07",
