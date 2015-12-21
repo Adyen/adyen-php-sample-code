@@ -79,7 +79,7 @@ $shopperInfo= array(
 /*Airline Data lines (If extra lines are needed, just copy all 7 line for each block and replace e.g. 'line3' with e.g. line4  and change the total numberOfLines*/
 	$airlineDataLines=array (
 					
-					"airline.passenger_name" => "Kate Winslet", /
+					"airline.passenger_name" => "Kate Winslet",
 					"airline.ticket_number" => "XC123", 
 					"airline.airline_code" => "111",
 					"airline.travel_agency_code" => "000000",
