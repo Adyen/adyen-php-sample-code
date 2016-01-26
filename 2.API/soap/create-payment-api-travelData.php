@@ -69,7 +69,7 @@ $paymentRequest=array(
 				),
 				"reference" => "Test Travel Data SOAP API PAYMENT-" . date("Y-m-dH:i:s"),
 				"shopperIP" => "1.1.1.1",
-				"shopperEmail" => "[merchant account]",
+				"shopperEmail" => "Test@adyen.com",
 				"shopperReference" => "Test travel shopper 001",
 				"fraudOffset" => "0",
 				"card" => array(
