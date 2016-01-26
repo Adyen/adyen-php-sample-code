@@ -135,7 +135,7 @@ $additionalDataArray=array(
 					"airline.leg2.stop_over_code" => "0",
 					"airline.leg2.destination_code" => "LTN",
 					"airline.leg2.date_of_travel" => "2015-02-20 00:00",
-					"airline.leg2.depart_tax" => "0.00",
+					"airline.leg2.depart_tax" => "1000",
 
 					/* Optional Lodging Data fields */
 					"lodging.checkInDate" => "20150607",
