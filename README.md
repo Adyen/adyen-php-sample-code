@@ -2,6 +2,11 @@ Adyen PHP Integration
 ==============
 The code examples in this reposity help you integrate with the Adyen platform using PHP. Please go through the code examples and read the documentation in the files itself. Each code example requires you to change some parameters to connect to your Adyen account such as merchant account and skincode.    
 
+
+## PHP API Library
+We have made a Library available that contains all of these APIs to make the integration easier.
+[The Library is open-source and availabel here](https://github.com/Adyen/adyen-php-api-library) 
+
 ## Code structure
 ```
 1.HPP (Hosted Payment Page)
