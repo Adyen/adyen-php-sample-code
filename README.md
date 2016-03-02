@@ -5,7 +5,7 @@ The code examples in this reposity help you integrate with the Adyen platform us
 
 ## PHP API Library
 We have made a Library available that contains all of these APIs to make the integration easier.
-[The Library is open-source and availabel here](https://github.com/Adyen/adyen-php-api-library) 
+[The Library is open-source and available here](https://github.com/Adyen/adyen-php-api-library) 
 
 ## Code structure
 ```
