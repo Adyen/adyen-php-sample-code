@@ -65,6 +65,7 @@ You can then pull the information you need from the MySQL database yourselves ba
 	if(isset($request->notification->notificationItems) && count($request->notification->notificationItems) >0)
 		$live=$request->notification->live;		
 		foreach($request->notification->notificationItems as $notificationRequestItem){
+				//FILL IN THE MYSQL SERVER CREDENTIALS HERE
 				$mysqli = new mysqli("host", "user", "password", "database");
 				if ($mysqli->connect_errno) {
 				    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
