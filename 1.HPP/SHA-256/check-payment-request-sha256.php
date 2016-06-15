@@ -51,7 +51,7 @@
   }
 
   //  Function to escape character
-  function escapeval($val) {
+  $escapeval = function ($val) {
     return str_replace(':','\\:',str_replace('\\','\\\\',$val));
   };
 
