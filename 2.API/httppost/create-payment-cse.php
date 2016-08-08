@@ -56,7 +56,7 @@
 	 curl_setopt($ch, CURLOPT_HEADER, false); 
 	 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC  );
 	 curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
-	 curl_setopt($ch, CURLOPT_POST,count($request));
+	 curl_setopt($ch, CURLOPT_POST,1);
 	 curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($request));
 	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	  
