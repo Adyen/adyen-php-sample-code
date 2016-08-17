@@ -78,8 +78,8 @@
   // base64-encode the binary result of the HMAC computation
   $merchantSig = base64_encode(hash_hmac('sha256',$signData,pack("H*" , $hmacKey),true));
 
-  // Compare the calculated signature with the signature from the URL parameters
-  if ($merchantSig === $res_merchantSig)
+  // Constant-time comparison the calculated signature with the signature from the URL parameters
+  if (hash_equals($merchantSig, $res_merchantSig))
     print "Correct merchant signature";
   else
     print "Incorrect merchant signature";
