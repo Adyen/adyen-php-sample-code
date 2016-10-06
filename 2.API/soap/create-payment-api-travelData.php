@@ -62,7 +62,7 @@
 
 $paymentRequest=array(
 			"paymentRequest" => array(
-				"merchantAccount" => "GuangmianKung", 
+				"merchantAccount" => "TestMerchantAccount", 
 				"amount" => array(
 					"currency" => "EUR",
 					"value" => "199",
