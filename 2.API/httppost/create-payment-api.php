@@ -43,32 +43,31 @@
   */
   
  $request = array(
-    "action" => "Payment.authorise",
-    "paymentRequest.merchantAccount" => "YourMerchantAccount",   
-	"paymentRequest.amount.currency" => "EUR",
-	"paymentRequest.amount.value" => "199",
-	"paymentRequest.reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
-	"paymentRequest.shopperIP" => "ShopperIPAddress",
-	"paymentRequest.shopperEmail" => "TheShopperEmailAddress",
-	"paymentRequest.shopperReference" => "YourReference",
-	"paymentRequest.fraudOffset" => "0",
+  	"merchantAccount" => "[YourMerchantAccount]",   
+	"amount.currency" => "EUR",
+	"amount.value" => "199",
+	"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
+	"shopperIP" => "ShopperIPAddress",
+	"shopperEmail" => "TheShopperEmailAddress",
+	"shopperReference" => "YourReference",
+	"fraudOffset" => "0",
 	
-	"paymentRequest.card.billingAddress.street" => "Simon Carmiggeltstraat",
-	"paymentRequest.card.billingAddress.postalCode" => "1011 DJ",
-	"paymentRequest.card.billingAddress.city" => "Amsterdam",
-	"paymentRequest.card.billingAddress.houseNumberOrName" => "6-50",
-	"paymentRequest.card.billingAddress.stateOrProvince" => "",
-	"paymentRequest.card.billingAddress.country" => "NL",
+	"card.billingAddress.street" => "Simon Carmiggeltstraat",
+	"card.billingAddress.postalCode" => "1011 DJ",
+	"card.billingAddress.city" => "Amsterdam",
+	"card.billingAddress.houseNumberOrName" => "6-50",
+	"card.billingAddress.stateOrProvince" => "",
+	"card.billingAddress.country" => "NL",
 	
-	"paymentRequest.card.expiryMonth" => "06",
-	"paymentRequest.card.expiryYear" => "2016",
-	"paymentRequest.card.holderName" => "The Holder Name Here",
-	"paymentRequest.card.number" => "5555444433331111",
-	"paymentRequest.card.cvc" => "737",
+	"card.expiryMonth" => "06",
+	"card.expiryYear" => "2016",
+	"card.holderName" => "The Holder Name Here",
+	"card.number" => "5555444433331111",
+	"card.cvc" => "737",
  );
  
  $ch = curl_init();
- curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/adapter/httppost");
+ curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
  curl_setopt($ch, CURLOPT_HEADER, false); 
  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC  );
  curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
