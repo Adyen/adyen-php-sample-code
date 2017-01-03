@@ -148,7 +148,7 @@
 	 * - refusalReason: If the payment was refused, the refusal reason.
 	 */ 
 	 
-print_r($result);
+print_r(json_decode($result));
  }
  
  curl_close($ch);
