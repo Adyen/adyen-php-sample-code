@@ -78,7 +78,7 @@ $request =array(
 		"expiryMonth" => "08",
 		"expiryYear" => "2018",
 		"holderName" => "Test Card Holder",
-		"number" => "4111111111111111",
+		"number" => "5212345678901234",
 		"cvc" => "737"
 	),
 	"browserInfo"=>array(
@@ -92,8 +92,8 @@ curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v1
 curl_setopt($ch, CURLOPT_HEADER, false); 
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
+curl_setopt($ch, CURLOPT_POST,count(json_encode($request)));
+curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($request));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER,array("Content-type: application/json")); 
 
