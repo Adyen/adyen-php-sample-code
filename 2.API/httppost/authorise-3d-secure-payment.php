@@ -6,9 +6,8 @@
  * protocol that involves the shopper being redirected to their card issuer where their
  * identity is authenticated prior to the payment proceeding to an authorisation request.
  * 
- * In order to start processing 3D Secure transactions, the following changes are required:
- * 1. Your Merchant Account needs to be confgured by Adyen to support 3D Secure. If you would
- *    like to have 3D Secure enabled, please submit a request to the Adyen Support Team (support@adyen.com).
+ * In order to start processing 3D Secure transactions, note the following:
+ * 1. Your Merchant Account supports 3DS by default.
  * 2. Your integration should support redirecting the shopper to the card issuer and submitting
  *    a second API call to complete the payment.
  *
