@@ -41,17 +41,16 @@
   */
 
 $request = array(
-	"action" => "Payment.authorise3d",
-	"paymentRequest3d.merchantAccount" => "YourMerchantAccount",
-	"paymentRequest3d.browserInfo.userAgent" => $_SERVER['HTTP_USER_AGENT'],
-	"paymentRequest3d.browserInfo.acceptHeader" => $_SERVER['HTTP_ACCEPT'],
-	"paymentRequest3d.md" => $_POST['MD'],
-	"paymentRequest3d.paResponse" => $_POST['PaRes'],
-	"paymentRequest3d.shopperIP" => "123.123.123.123"
+	"merchantAccount" => "YourMerchantAccount",
+	"browserInfo.userAgent" => $_SERVER['HTTP_USER_AGENT'],
+	"browserInfo.acceptHeader" => $_SERVER['HTTP_ACCEPT'],
+	"md" => $_POST['MD'],
+	"paResponse" => $_POST['PaRes'],
+	"shopperIP" => "123.123.123.123"
 );
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/adapter/httppost");
+curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
 curl_setopt($ch, CURLOPT_HEADER, false); 
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
