@@ -150,7 +150,7 @@ else {
 		<?php
 	}
 	else {
-		print_r($result);
+		print_r(json_decode($result));
 	}
 }
 curl_close($ch);
