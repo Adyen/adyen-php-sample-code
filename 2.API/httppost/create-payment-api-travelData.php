@@ -43,7 +43,7 @@
   */
   
  $request = array(
-  "merchantAccount" => "YourMerchantAccount",   
+  "merchantAccount" => "[YourMerchantAccount]",   
 	"amount.currency" => "EUR",
 	"amount.value" => "199",
 	"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
