@@ -58,36 +58,34 @@
   */
   
  $request = array(
-	"action" => "Payment.authorise",
+	"merchantAccount" => "[YourMerchantAccount]",   
+	"amount.currency" => "EUR",
+	"amount.value" => "199",
+	"reference" => "TEST-3D-SECURE-PAYMENT-" . date("Y-m-d-H:i:s"),
+	"shopperIP" => "ShopperIPAddress",
+	"shopperEmail" => "TheShopperEmailAddress",
+	"shopperReference" => "YourReference",
+	"fraudOffset" => "0",
 	
-	"paymentRequest.merchantAccount" => "YourMerchantAccount",   
-	"paymentRequest.amount.currency" => "EUR",
-	"paymentRequest.amount.value" => "199",
-	"paymentRequest.reference" => "TEST-3D-SECURE-PAYMENT-" . date("Y-m-d-H:i:s"),
-	"paymentRequest.shopperIP" => "ShopperIPAddress",
-	"paymentRequest.shopperEmail" => "TheShopperEmailAddress",
-	"paymentRequest.shopperReference" => "YourReference",
-	"paymentRequest.fraudOffset" => "0",
+	"card.expiryMonth" => "08",
+	"card.expiryYear" => "2018",
+	"card.holderName" => "The Holder Name Here",
+	"card.number" => "5212345678901234",
+	"card.cvc" => "737",
 	
-	"paymentRequest.card.expiryMonth" => "06",
-	"paymentRequest.card.expiryYear" => "2016",
-	"paymentRequest.card.holderName" => "The Holder Name Here",
-	"paymentRequest.card.number" => "5212345678901234",
-	"paymentRequest.card.cvc" => "737",
+	"card.billingAddress.street" => "Simon Carmiggeltstraat",
+	"card.billingAddress.postalCode" => "1011 DJ",
+	"card.billingAddress.city" => "Amsterdam",
+	"card.billingAddress.houseNumberOrName" => "6-50",
+	"card.billingAddress.stateOrProvince" => "",
+	"card.billingAddress.country" => "NL",
 	
-	"paymentRequest.card.billingAddress.street" => "Simon Carmiggeltstraat",
-	"paymentRequest.card.billingAddress.postalCode" => "1011 DJ",
-	"paymentRequest.card.billingAddress.city" => "Amsterdam",
-	"paymentRequest.card.billingAddress.houseNumberOrName" => "6-50",
-	"paymentRequest.card.billingAddress.stateOrProvince" => "",
-	"paymentRequest.card.billingAddress.country" => "NL",
-	
-	"paymentRequest.browserInfo.userAgent" => $_SERVER['HTTP_USER_AGENT'],
-	"paymentRequest.browserInfo.acceptHeader" => $_SERVER['HTTP_ACCEPT'],
+	"browserInfo.userAgent" => $_SERVER['HTTP_USER_AGENT'],
+	"browserInfo.acceptHeader" => $_SERVER['HTTP_ACCEPT'],
  );
  
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/adapter/httppost");
+curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
 curl_setopt($ch, CURLOPT_HEADER, false); 
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
