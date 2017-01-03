@@ -22,7 +22,7 @@
   *   to cache the WSDL since we usually never change it.
   */
  $client = new SoapClient(
-	"https://pal-test.adyen.com/pal/Payment.wsdl", array(
+	"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
 		"login" => "YourWSUser",  
 		"password" => "YourWSUserPassword",  
 		"style" => SOAP_DOCUMENT,
@@ -64,7 +64,7 @@
  try{
 	$result = $client->authorise(array(
 			"paymentRequest" => array(
-				"merchantAccount" => "YourMerchantAccount", 
+				"merchantAccount" => "[YourMerchantAccount]", 
 				"amount" => array(
 					"currency" => "EUR",
 					"value" => "199",
