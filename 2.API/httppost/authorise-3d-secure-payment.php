@@ -41,7 +41,7 @@
   */
 
 $request = array(
-	"merchantAccount" => "YourMerchantAccount",
+	"merchantAccount" => "[YourMerchantAccount]",
 	"browserInfo.userAgent" => $_SERVER['HTTP_USER_AGENT'],
 	"browserInfo.acceptHeader" => $_SERVER['HTTP_ACCEPT'],
 	"md" => $_POST['MD'],
