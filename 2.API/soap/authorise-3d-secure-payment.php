@@ -31,7 +31,7 @@
   *   to cache the WSDL since we usually never change it.
   */
  $client = new SoapClient(
-	"https://pal-test.adyen.com/pal/Payment.wsdl", array(
+	"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
 		"login" => "YourWSUser",  
 		"password" => "YourWSUserPassword",  
 		"style" => SOAP_DOCUMENT,
@@ -62,7 +62,7 @@
 try {
 	$result = $client->authorise3d(array(
 			"paymentRequest3d" => array(
-				"merchantAccount" => "YourMerchantAccount",
+				"merchantAccount" => "[YourMerchantAccount]",
 				"browserInfo" => array(
 					"userAgent" => $_SERVER['HTTP_USER_AGENT'],
 					"acceptHeader" => $_SERVER['HTTP_ACCEPT']
