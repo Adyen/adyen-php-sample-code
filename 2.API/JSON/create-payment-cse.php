@@ -47,10 +47,10 @@
 		"shopperEmail" => "TheShopperEmailAddress",
 		"shopperReference" => "YourReference", 
 		"fraudOffset" => "0",
-    "additionalData"=>array(
-    		"card.encrypted.json" => $_POST['adyen-encrypted-data']
+    		"additionalData"=>array(
+    			"card.encrypted.json" => $_POST['adyen-encrypted-data']
 
-    )
+    		)
 	 );
 	 
 	 $ch = curl_init();
