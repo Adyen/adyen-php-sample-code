@@ -102,7 +102,7 @@ $additionalDataArray=array(
 					"airline.boarding_fee" => "12",
 					"airline.airline_designator_code" => "AA",
 					"airline.agency_plan_name" => "AA",
-					"airline.agency_invoice_number" => "160170103990",
+					"airline.agency_invoice_number" => "160170",
 					"airline.flight_date" => "2018-02-19 00:00",
 
 					"airline.passenger1.first_name" => "Kate",
