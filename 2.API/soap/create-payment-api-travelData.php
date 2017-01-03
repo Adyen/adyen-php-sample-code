@@ -21,7 +21,7 @@
   *   to cache the WSDL since we usually never change it.
   */
  $client = new SoapClient(
-	"https://pal-test.adyen.com/pal/servlet/Payment/v10?wsdl", array(
+	"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
 		"login" => "[webservice user]",  
 		"password" => "[webservice user password]",  
 		"style" => SOAP_DOCUMENT,
@@ -62,7 +62,7 @@
 
 $paymentRequest=array(
 			"paymentRequest" => array(
-				"merchantAccount" => "TestMerchantAccount", 
+				"merchantAccount" => "[YourMerchantAccount]", 
 				"amount" => array(
 					"currency" => "EUR",
 					"value" => "199",
