@@ -32,7 +32,7 @@
 	  *   to cache the WSDL since we usually never change it.
 	  */
 	 $client = new SoapClient(
-		"https://pal-test.adyen.com/pal/Payment.wsdl", array(
+		"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
 			"login" => "YourWSUser",  
 			"password" => "YourWSUserPassword",   
 			"style" => SOAP_DOCUMENT,
@@ -62,7 +62,7 @@
 
 		$result = $client->authorise(array(
 				"paymentRequest" => array(
-					"merchantAccount" => "YourMerchantAccount",  
+					"merchantAccount" => "[YourMerchantAccount]",  
 					"amount" => array(
 						"currency" => "EUR",
 						"value" => "199",
@@ -109,7 +109,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	 </head>
 	 <body>
-		<form method="POST" action="#handler" id="adyen-encrypted-form">
+		<form method="POST" action="[insert the (localhost) URL of this PHP file here]" id="adyen-encrypted-form">
 			<fieldset>
 				<legend>Card Details</legend>
 					<label for="adyen-encrypted-form-number">
