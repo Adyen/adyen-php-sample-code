@@ -63,9 +63,9 @@
 		"cvc" => "737"
 	),
 	"browserInfo"=>array(
-		"acceptHeader"=>"text%2Fhtml%2Capplication%2Fxhtml%2Bxml%2Capplication%2Fxml%3Bq%3D0.9%2C%2A%2F%2A%3Bq%3D0.",
-		"userAgent"=>"Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.31+%28KHTML%2C+like+Gecko%29+Chrome%2F26.0.1410.63+Safari%2F537.31"
-	),	 
+		"acceptHeader"=>$_SERVER['HTTP_USER_AGENT'],
+		"userAgent"=>$_SERVER['HTTP_ACCEPT']
+	) 
         "additionalData"=>array(
   /*Optional Airline Data*/
 		"airline.passenger_name" => "Kate Winslet",
