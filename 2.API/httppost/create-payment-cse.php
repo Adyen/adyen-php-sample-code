@@ -39,20 +39,19 @@
 	  * - paymentRequest.additionalData.card.encrypted.json: The encrypted card caught by the POST variables.
 	  */
 	$request = array(
-		"action" => "Payment.authorise",
-		"paymentRequest.merchantAccount" => "YourMerchantAccount",    
-		"paymentRequest.amount.currency" => "EUR",
-		"paymentRequest.amount.value" => "199",
-		"paymentRequest.reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
-		"paymentRequest.shopperIP" => "ShopperIPAddress",
-		"paymentRequest.shopperEmail" => "TheShopperEmailAddress",
-		"paymentRequest.shopperReference" => "YourReference", 
-		"paymentRequest.fraudOffset" => "0",
-		"paymentRequest.additionalData.card.encrypted.json" => $_POST['adyen-encrypted-data']
+		"merchantAccount" => "YourMerchantAccount",    
+		"amount.currency" => "EUR",
+		"amount.value" => "199",
+		"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
+		"shopperIP" => "ShopperIPAddress",
+		"shopperEmail" => "TheShopperEmailAddress",
+		"shopperReference" => "YourReference", 
+		"fraudOffset" => "0",
+		"additionalData.card.encrypted.json" => $_POST['adyen-encrypted-data']
 	 );
 	 
 	 $ch = curl_init();
-	 curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/adapter/httppost");
+	 curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
 	 curl_setopt($ch, CURLOPT_HEADER, false); 
 	 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC  );
 	 curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
@@ -88,7 +87,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	 </head>
 	 <body>
-		<form method="POST" action="#handler" id="adyen-encrypted-form">
+		<form method="POST" action="[insert the (localhost) URL of this PHP file here]" id="adyen-encrypted-form">
 			<fieldset>
 				<legend>Card Details</legend>
 					<label for="adyen-encrypted-form-number">
