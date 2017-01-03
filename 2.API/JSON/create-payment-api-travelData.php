@@ -2,14 +2,10 @@
 /**
  * Create Payment through the API (HTTP Post)
  * 
- * Payments can be created through our API, however this is only possible if you are
- * PCI Compliant. HTTP Post payments are submitted using the Payment.authorise action. 
- * We will explain a simple credit card submission. 
  * 
  * Please note: using our API requires a web service user. Set up your Webservice 
  * user: Adyen Test CA >> Settings >> Users >> ws@Company. >> Generate Password >> Submit 
  *  
- * @link	2.API/httppost/create-payment-api.php 
  * @author	Created by Adyen - Payments Made Easy
  */ 
  
@@ -46,7 +42,7 @@
       "merchantAccount" => "[YourMerchantAccount]",   
   		"amount" => array(
   				"currency" => "EUR",
-  				"value" => "100",
+  				"value" => "199",
   				),
     	"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
   		"shopperIP" => "2.207.255.255",
@@ -113,36 +109,14 @@
         "additionalData.lodging.room2.rate"=>"1220",
         "additionalData.lodging.room2.numberOfNights" => "2",      
          ),
-
 			);
-
- /*'{
-"amount": {
-"value": 10000,
-"currency": "EUR"
-},
-"card": {
-	"number": "4111111111111111",
-	"expiryMonth": "6",
-	"expiryYear": "2016",
-	"cvc": "737",
-	"holderName": "Adyen Test"
-},
-"reference": “Your Reference Here“,
-"merchantAccount": "GuangmianKung”,
-“shopperEmail”: “s.hopper@test.com”,
-“shopperIP”: “61.294.12.12”,
-“shopperReference”: “Simon Hopper”
-}';
-*/
-
 
  
  $ch = curl_init();
- curl_setopt($ch, CURLOPT_URL, "https://pal-live.adyen.com/pal/servlet/Payment/authorise/v10");
+ curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
  curl_setopt($ch, CURLOPT_HEADER, false); 
  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC  );
- curl_setopt($ch, CURLOPT_USERPWD,  "ws_783340@Company.AdyenTechSupport:dk!LBu9XnSkex5EkyjGR&L<8*");
+ curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
  curl_setopt($ch, CURLOPT_POST,count(json_encode($request)));
  curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($request));
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
