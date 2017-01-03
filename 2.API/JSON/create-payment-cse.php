@@ -50,7 +50,11 @@
     		"additionalData"=>array(
     			"card.encrypted.json" => $_POST['adyen-encrypted-data']
 
-    		)
+    		),
+		"browserInfo"=>array(
+			"acceptHeader"=>$_SERVER['HTTP_USER_AGENT'],
+			"userAgent"=>$_SERVER['HTTP_ACCEPT']
+	)		
 	 );
 	 
 	 $ch = curl_init();
