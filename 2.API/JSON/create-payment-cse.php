@@ -118,7 +118,7 @@
 						<input type="text" value="2018" id="adyen-encrypted-form-expiry-year"  size="4"  autocomplete="off" data-encrypted-name="expiryYear" />
 					</label>
 					
-					<input type="hidden" id="adyen-encrypted-form-expiry-generationtime" value="<?=date("c") ?>" data-encrypted-name="generationtime" />
+					<input type="hidden" id="adyen-encrypted-form-expiry-generationtime" value="<?php date_default_timezone_set('Europe/Amsterdam'); echo date("c")?>" data-encrypted-name="generationtime" />
 					<input type="submit" value="Create payment" />
 			</fieldset>	
 		</form>
