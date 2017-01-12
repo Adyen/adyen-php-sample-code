@@ -40,8 +40,9 @@
 	  */
 	$request = array(
 		"merchantAccount" => "[YourMerchantAccount]",    
-		"amount.currency" => "EUR",
-		"amount.value" => "199",
+		"amount" => array(
+				"value"=>100,
+				"currency"=>"EUR"),
 		"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
 		"shopperIP" => "ShopperIPAddress",
 		"shopperEmail" => "TheShopperEmailAddress",
