@@ -123,10 +123,10 @@ else {
 	 * A sample form is shown below.
 	 */
 	
-	if ($result['paymentResult_resultCode'] == 'RedirectShopper') {
-		$IssuerUrl = $result['paymentResult_issuerUrl'];
-		$PaReq = $result['paymentResult_paRequest'];
-		$MD = $result['paymentResult_md'];
+	if ($result['resultCode'] == 'RedirectShopper') {
+		$IssuerUrl = $result['issuerUrl'];
+		$PaReq = $result['paRequest'];
+		$MD = $result['md'];
 		$TermUrl = "YOUR_URL_HERE/authorise-3d-secure-payment.php";
 		?>
 		<body onload="document.getElementById('3dform').submit();">
