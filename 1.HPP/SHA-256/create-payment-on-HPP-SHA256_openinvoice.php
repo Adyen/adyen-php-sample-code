@@ -24,7 +24,7 @@
                     "merchantAccount"   =>  $merchantAccount,
                     "currencyCode"      => "EUR",
                     "paymentAmount"     => "199",
-                    "sessionValidity"   => "2016-12-25T10:31:06Z",
+                    "sessionValidity"   => "2020-12-25T10:31:06Z",
                     "shipBeforeDate"    => "2017-07-01",
                     "shopperLocale"     => "en_GB",
                     "skinCode"          => $skinCode,
