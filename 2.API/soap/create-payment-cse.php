@@ -32,7 +32,7 @@
 	  *   to cache the WSDL since we usually never change it.
 	  */
 	 $client = new SoapClient(
-		"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
+		"https://pal-test.adyen.com/pal/servlet/Payment/v25?wsdl", array(
 			"login" => "YourWSUser",  
 			"password" => "YourWSUserPassword",   
 			"style" => SOAP_DOCUMENT,
@@ -60,7 +60,8 @@
 		  * - paymentRequest.additionalData.card.encrypted.json: The encrypted card catched by the POST variables.
 		  */
 
-		$result = $client->authorise(array(
+		$result = $client->authorise(
+			array(
 				"paymentRequest" => array(
 					"merchantAccount" => "[YourMerchantAccount]",  
 					"amount" => array(

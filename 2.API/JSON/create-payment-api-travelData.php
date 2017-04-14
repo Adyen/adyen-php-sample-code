@@ -24,37 +24,37 @@
   * - shopperReference: The shopper reference, i.e. the shopper ID
   * - fraudOffset: Numeric value that will be added to the fraud score (optional)
   * - card
-  * 	- billingAddress: we advice you to submit billingAddress data if available for risk checks;
-  * 		- street: The street name
-  * 		- postalCode: The postal/zip code.
-  * 		- city: The city
-  * 		- houseNumberOrName:
-  * 		- stateOrProvince: The house number
-  * 		- country: The country
   * 	- expiryMonth: The expiration date's month written as a 2-digit string, padded with 0 if required (e.g. 03 or 12).
   * 	- expiryYear: The expiration date's year written as in full. e.g. 2016.
   * 	- holderName: The card holder's name, aas embossed on the card.
   * 	- number: The card number.
   * 	- cvc: The card validation code. This is the the CVC2 code (for MasterCard), CVV2 (for Visa) or CID (for American Express).
+  * - billingAddress: we advice you to submit billingAddress data if available for risk checks;
+  * 	- street: The street name
+  * 	- postalCode: The postal/zip code.
+  * 	- city: The city
+  * 	- houseNumberOrName:
+  * 	- stateOrProvince: The house number
+  * 	- country: The country
   */
   
  $request =array(
-      "merchantAccount" => "[YourMerchantAccount]",   
-  		"amount" => array(
-  				"currency" => "EUR",
-  				"value" => "199",
-  				),
-    	"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
+ 	"merchantAccount" => "[YourMerchantAccount]",   
+  	"amount" => array(
+  		"currency" => "EUR",
+  		"value" => "199"
+  	),
+    "reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
 	"shopperIP" => "2.207.255.255",
 	"shopperReference" => "YourReference",
-        "billingAddress" => array(
-		 "street" => "Simon Carmiggeltstraat",
-		 "postalCode" => "1011DJ",
-		 "city" => "Amsterdam",
-		 "houseNumberOrName" => "6-60",
-		 "stateOrProvince" => "NH",
-		 "country" => "NL",
-        ),
+    "billingAddress" => array(
+    	"street" => "Simon Carmiggeltstraat",
+		"postalCode" => "1011DJ",
+		"city" => "Amsterdam",
+		"houseNumberOrName" => "6-60",
+		"stateOrProvince" => "NH",
+		"country" => "NL"
+	),
 	"card" => array(
 		"expiryMonth" => "08",
 		"expiryYear" => "2018",
@@ -65,9 +65,9 @@
 	"browserInfo"=>array(
 		"acceptHeader"=>$_SERVER['HTTP_USER_AGENT'],
 		"userAgent"=>$_SERVER['HTTP_ACCEPT']
-	) 
-        "additionalData"=>array(
-  /*Optional Airline Data*/
+	)
+	"additionalData"=>array(
+		/*Optional Airline Data*/
 		"airline.passenger_name" => "Kate Winslet",
 		"airline.ticket_number" => "12311023213534",
 		"airline.airline_code" => "123",
@@ -118,13 +118,12 @@
 		"lodging.room1.rate"=>"1220",
 		"lodging.room1.numberOfNights" => "4",
 		"lodging.room2.rate"=>"1220",
-		"lodging.room2.numberOfNights" => "2",       
-         ),
-			);
-
+		"lodging.room2.numberOfNights" => "2"
+	)
+);
  
  $ch = curl_init();
- curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
+ curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v25/authorise");
  curl_setopt($ch, CURLOPT_HEADER, false); 
  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC  );
  curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   
@@ -147,8 +146,7 @@
 	 * - authCode: An authorisation code if the payment was successful, or blank otherwise;
 	 * - refusalReason: If the payment was refused, the refusal reason.
 	 */ 
-	 
-print_r(json_decode($result));
+ 	print_r(json_decode($result));
  }
  
  curl_close($ch);

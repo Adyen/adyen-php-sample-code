@@ -31,7 +31,7 @@
   *   to cache the WSDL since we usually never change it.
   */
  $client = new SoapClient(
-	"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
+	"https://pal-test.adyen.com/pal/servlet/Payment/v25?wsdl", array(
 		"login" => "YourWSUser",  
 		"password" => "YourWSUserPassword",  
 		"style" => SOAP_DOCUMENT,

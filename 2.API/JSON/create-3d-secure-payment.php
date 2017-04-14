@@ -45,35 +45,35 @@
   *     - number                : The card number.
   *     - cvc                   : The card validation code, which is the CVC2 (MasterCard),
   *                               CVV2 (Visa) or CID (American Express).
-  *     - billingAddress (recommended)
-  *         - street            : The street name.
-  *         - houseNumberOrName : The house number (or name).
-  *         - city              : The city.
-  *         - postalCode        : The postal/zip code.
-  *         - stateOrProvince   : The state or province.
-  *         - country           : The country in ISO 3166-1 alpha-2 format (e.g. NL).
+  * - billingAddress (recommended)
+  *     - street            : The street name.
+  *     - houseNumberOrName : The house number (or name).
+  *     - city              : The city.
+  *     - postalCode        : The postal/zip code.
+  *     - stateOrProvince   : The state or province.
+  *     - country           : The country in ISO 3166-1 alpha-2 format (e.g. NL).
   * - browserInfo
   *     - userAgent             : The user agent string of the shopper's browser (required).
   *     - acceptHeader          : The accept header string of the shopper's browser (required).
   */
   
 $request =array(
-      "merchantAccount" => "[YourMerchantAccount]",   
-  		"amount" => array(
-  				"currency" => "EUR",
-  				"value" => "199",
-  				),
-    	"reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
+	"merchantAccount" => "[YourMerchantAccount]",   
+  	"amount" => array(
+  		"currency" => "EUR",
+  		"value" => "199"
+  	),
+    "reference" => "TEST-PAYMENT-" . date("Y-m-d-H:i:s"),
 	"shopperIP" => "2.207.255.255",
 	"shopperReference" => "YourReference",
-        "billingAddress" => array(
-		 "street" => "Simon Carmiggeltstraat",
-		 "postalCode" => "1011DJ",
-		 "city" => "Amsterdam",
-		 "houseNumberOrName" => "6-60",
-		 "stateOrProvince" => "NH",
-		 "country" => "NL",
-        ),
+    "billingAddress" => array(
+    	"street" => "Simon Carmiggeltstraat",
+		"postalCode" => "1011DJ",
+		"city" => "Amsterdam",
+		"houseNumberOrName" => "6-60",
+		"stateOrProvince" => "NH",
+		"country" => "NL"
+    ),
 	"card" => array(
 		"expiryMonth" => "08",
 		"expiryYear" => "2018",
@@ -85,10 +85,10 @@ $request =array(
 		"acceptHeader"=>$_SERVER['HTTP_USER_AGENT'],
 		"userAgent"=>$_SERVER['HTTP_ACCEPT']
 	)
- );
+);
  
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v18/authorise");
+curl_setopt($ch, CURLOPT_URL, "https://pal-test.adyen.com/pal/servlet/Payment/v25/authorise");
 curl_setopt($ch, CURLOPT_HEADER, false); 
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "YourWSUser:YourWSUserPassword");   

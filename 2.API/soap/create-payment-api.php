@@ -22,7 +22,7 @@
   *   to cache the WSDL since we usually never change it.
   */
  $client = new SoapClient(
-	"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
+	"https://pal-test.adyen.com/pal/servlet/Payment/v25?wsdl", array(
 		"login" => "YourWSUser",  
 		"password" => "YourWSUserPassword",  
 		"style" => SOAP_DOCUMENT,
@@ -47,27 +47,28 @@
   * - shopperReference: The shopper reference, i.e. the shopper ID
   * - fraudOffset: Numeric value that will be added to the fraud score (optional)
   * - card
-  * 	- billingAddress: we advice you to submit billingAddress data if available for risk checks;
-  * 		- street: The street name
-  * 		- postalCode: The postal/zip code.
-  * 		- city: The city
-  * 		- houseNumberOrName:
-  * 		- stateOrProvince: The house number
-  * 		- country: The country
   * 	- expiryMonth: The expiration date's month written as a 2-digit string, padded with 0 if required (e.g. 03 or 12).
   * 	- expiryYear: The expiration date's year written as in full. e.g. 2016.
   * 	- holderName: The card holder's name, aas embossed on the card.
   * 	- number: The card number.
   * 	- cvc: The card validation code. This is the the CVC2 code (for MasterCard), CVV2 (for Visa) or CID (for American Express).
+  * - billingAddress: we advice you to submit billingAddress data if available for risk checks;
+  * 	- street: The street name
+  * 	- postalCode: The postal/zip code.
+  * 	- city: The city
+  * 	- houseNumberOrName:
+  * 	- stateOrProvince: The house number
+  * 	- country: The country
   */
   
  try{
-	$result = $client->authorise(array(
-			"paymentRequest" => array(
+ 	$result = $client->authorise(
+ 		array(
+ 			"paymentRequest" => array(
 				"merchantAccount" => "[YourMerchantAccount]", 
 				"amount" => array(
 					"currency" => "EUR",
-					"value" => "199",
+					"value" => "199"
 				),
 				"reference" => "TEST-PAYMENT-" . date("Y-m-dH:i:s"),
 				"shopperIP" => "ShopperIPAddress",
@@ -75,19 +76,19 @@
 				"shopperReference" => "YourReference",
 				"fraudOffset" => "0",
 				"card" => array(
-					"billingAddress" => array(
-						"street" => "Simon Carmiggeltstraat",
-						"postalCode" => "1011 DJ",
-						"city" => "Amsterdam",
-						"houseNumberOrName" => "6-50",
-						"stateOrProvince" => "",
-						"country" => "NL",
-					),
 					"expiryMonth" => "06",
 					"expiryYear" => "2016",
 					"holderName" => "The Holder Name Here",
 					"number" => "5555444433331111",
 					"cvc" => "737"
+				),
+				"billingAddress" => array(
+					"street" => "Simon Carmiggeltstraat",
+					"postalCode" => "1011 DJ",
+					"city" => "Amsterdam",
+					"houseNumberOrName" => "6-50",
+					"stateOrProvince" => "",
+					"country" => "NL"
 				)
 			)
 		)

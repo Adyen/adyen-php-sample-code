@@ -29,7 +29,7 @@
   *   to cache the WSDL since we usually never change it.
   */
  $client = new SoapClient(
-	"https://pal-test.adyen.com/pal/servlet/Payment/v18?wsdl", array(
+	"https://pal-test.adyen.com/pal/servlet/Payment/v25?wsdl", array(
 		"login" => "YourWSUser",  
 		"password" => "YourWSUserPassword",  
 		"style" => SOAP_DOCUMENT,
@@ -64,13 +64,13 @@
   *     - number                : The card number.
   *     - cvc                   : The card validation code, which is the CVC2 (MasterCard),
   *                               CVV2 (Visa) or CID (American Express).
-  *     - billingAddress (recommended)
-  *         - street            : The street name.
-  *         - houseNumberOrName : The house number (or name).
-  *         - city              : The city.
-  *         - postalCode        : The postal/zip code.
-  *         - stateOrProvince   : The state or province.
-  *         - country           : The country in ISO 3166-1 alpha-2 format (e.g. NL).
+  * - billingAddress (recommended)
+  *  	- street            : The street name.
+  *     - houseNumberOrName : The house number (or name).
+  *     - city              : The city.
+  *     - postalCode        : The postal/zip code.
+  *     - stateOrProvince   : The state or province.
+  *     - country           : The country in ISO 3166-1 alpha-2 format (e.g. NL).
   * - browserInfo
   *     - userAgent             : The user agent string of the shopper's browser (required).
   *     - acceptHeader          : The accept header string of the shopper's browser (required).
@@ -82,7 +82,7 @@ try {
 				"merchantAccount" => "[YourMerchantAccount]",
 				"amount" => array(
 					"currency" => "EUR",
-					"value" => "199",
+					"value" => "199"
 				),
 				"reference" => "TEST-3D-SECURE-PAYMENT-" . date("Y-m-dH:i:s"),
 				"shopperIP" => "ShopperIPAddress",
@@ -94,19 +94,19 @@ try {
 					"expiryYear" => "2016",
 					"holderName" => "The Holder Name Here",
 					"number" => "5212345678901234",
-					"cvc" => "737",
-					"billingAddress" => array(
-						"street" => "Simon Carmiggeltstraat",
-						"postalCode" => "1011 DJ",
-						"city" => "Amsterdam",
-						"houseNumberOrName" => "6-50",
-						"stateOrProvince" => "",
-						"country" => "NL",
-					)
+					"cvc" => "737"
 				),
+				"billingAddress" => array(
+					"street" => "Simon Carmiggeltstraat",
+					"postalCode" => "1011 DJ",
+					"city" => "Amsterdam",
+					"houseNumberOrName" => "6-50",
+					"stateOrProvince" => "",
+					"country" => "NL"
+				)
 				"browserInfo" => array(
 					"userAgent" => $_SERVER['HTTP_USER_AGENT'],
-					"acceptHeader" => $_SERVER['HTTP_ACCEPT'],
+					"acceptHeader" => $_SERVER['HTTP_ACCEPT']
 				)
 			)
 		)
