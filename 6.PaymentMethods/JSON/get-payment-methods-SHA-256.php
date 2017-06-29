@@ -17,7 +17,7 @@
  * Please note that the countryCode field is mandatory to receive 
  * back the correct payment methods. 
  * 
- * @link	6.PaymentMethods/get-payment-methods.php 
+ * @link	6.PaymentMethods/JSON/get-payment-methods-SHA-256.php
  * @author	Created by Adyen - Payments Made Easy
  */
 

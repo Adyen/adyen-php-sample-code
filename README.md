@@ -14,51 +14,66 @@ We have made a library available that contains all of these APIs to make the int
   - create-payment-on-hpp.php           : Simple form creating a payment on our HPP;
   - create-payment-on-hpp-advanced.php  : Advanced form creating a payment on our HPP;
 2. API
-  - httppost
-  	- create-payment-api.php            : Create a payment via our API;
-  	- create-payment-cse.php            : Create a Client-Side Encrypted payment;
+  - JSON
+    - authorise-3d-secure-payment.php   : Authorise a 3D Secure payment using JSON
+    - create-3d-secure-payment.php      : Create a 3D Secure payment using JSON
+  	- create-payment-api.php            : Create a payment via our API using JSON
+  	- create-payment-api-travelData.php : Create a payment via our API, including travel data, using JSON
+  	- create-payment-cse.php            : Create a Client-Side Encrypted payment using JSON
+  - Library
+    - authorise-3d-secure-payment.php   : Authorise a 3D Secure payment using PHP Library
+    - create-3d-secure-payment.php      : Create a 3D Secure payment using PHP Library
+    - create-payment-api.php            : Create a payment via our API using PHP Library
+   	- create-payment-api-travelData.php : Create a payment via our API, including travel data, using PHP Library
+   	- create-payment-cse.php            : Create a Client-Side Encrypted payment using PHP Library
   - soap
-  	- create-payment-api.php            : Create a payment via our API;
-  	- create-payment-cse.php            : Create a Client-Side Encrypted payment;
-  - js
-    - adyen.encrypt.min.js              : JavaScript file required for encrypting card data;
+    - authorise-3d-secure-payment.php   : Authorise a 3D Secure payment using SOAP
+    - create-3d-secure-payment.php      : Create a 3D Secure payment using SOAP
+   	- create-payment-api.php            : Create a payment via our API using SOAP
+   	- create-payment-api-travelData.php : Create a payment via our API, including travel data, using SOAP
+   	- create-payment-cse.php            : Create a Client-Side Encrypted payment using SOAP
+ - js
+    - adyen.encrypt.min.js              : JavaScript file required for encrypting card data
 3. Notifications
   - httppost
-    - notification-server.php           : Receive our notifications using HTTP Post;
+    - notification-server.php           : Receive our notifications using HTTP Post
   - soap
-    - notification-server.php           : Receive our notification using SOAP;
+    - notification-server.php           : Receive our notifications using SOAP
 4. Modifications  
-  - httppost
-    - cancel-or-refund.php              : Cancel or refund a payment using HTTP Post;
-    - cancel.php                        : Cancel a payment using HTTP Post;
-    - capture.php                       : Capture a payment using HTTP Post;
-    - refund.php                        : Request a refund using HTTP Post;
+  - Library
+    - cancel-or-refund.php              : Cancel or refund a payment using PHP Library
+    - cancel.php                        : Cancel a payment using PHP Library
+    - capture.php                       : Capture a payment using PHP Library
+    - refund.php                        : Request a refund using PHP Library
   - soap
-    - cancel-or-refund.php              : Cancel or refund a payment using SOAP;
-    - cancel-soap.php                   : Cancel a payment using SOAP;
-    - capture-soap.php                  : Capture a payment using SOAP;
-    - refund-soap.php                   : Request a refund using SOAP;
+    - cancel-or-refund.php              : Cancel or refund a payment using SOAP
+    - cancel-soap.php                   : Cancel a payment using SOAP
+    - capture-soap.php                  : Capture a payment using SOAP
+    - refund-soap.php                   : Request a refund using SOAP
 5. Recurring
-  - httppost
-    - create-recurring-payment.php      : Create a recurring payment;
-    - disable-recurring-contract.php    : Disable a recurring contract for a shopper;
-    - request-recurring-contract.php    : Request a recurring contact for a shopper;
+  - Library
+    - create-recurring-payment.php      : Create a recurring payment
+    - disable-recurring-contract.php    : Disable a recurring contract for a shopper
+    - request-recurring-contract.php    : Request a recurring contact for a shopper
   - soap
-    - create-recurring-payment.php      : Create a recurring payment;
-    - disable-recurring-contract.php    : Disable a recurring contract for a shopper;
-    - request-recurring-contract.php    : Request a recurring contact for a shopper;
+    - create-recurring-payment.php      : Create a recurring payment
+    - disable-recurring-contract.php    : Disable a recurring contract for a shopper
+    - request-recurring-contract.php    : Request a recurring contact for a shopper
 6. PaymentMethods
-  - get-payment-methods.php             : Get payment methods available for merchant account.
+  -JSON
+    - get-payment-methods-SHA-256.php   : Get payment methods available for merchant account
+  -Library
+    - get-payment-methods.php           : Get payment methods available for merchant account using PHP Library
 7. OpenInvoice
   - httppost
-    - openinvoice-server.php            : Implementation of Open Invoice service.
+    - openinvoice-server.php            : Implementation of Open Invoice service
   - soap
-    - openinvoice-server.php            : Implementation of Open Invoice service.
+    - openinvoice-server.php            : Implementation of Open Invoice service
 8. Customfields
   - httppost
-    - customfields-server.php           : Custom fields service.
+    - customfields-server.php           : Custom fields service
   - soap
-    - customfields-server.php           : Custom fields service.
+    - customfields-server.php           : Custom fields service
 ```
 ## Documentation
 The code examples are based on our developer documentation, which provides comprehensive information on how the Adyen platform works. For more information, refer to the [Adyen Documentation](https://docs.adyen.com/). 
