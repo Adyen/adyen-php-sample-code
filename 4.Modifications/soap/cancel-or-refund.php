@@ -10,7 +10,7 @@
  * Please note: using our API requires a web service user. Set up your Webservice 
  * user: Adyen Test CA >> Settings >> Users >> ws@Company. >> Generate Password >> Submit 
  *  
- * @link	4.Modifications/soap/cancel-or-refund-soap.php 
+ * @link	4.Modifications/soap/cancel-or-refund.php
  * @author	Created by Adyen - Payments Made Easy
  */
  
@@ -52,7 +52,7 @@
 	 * If the message was syntactically valid and merchantAccount is correct you will receive a
 	 * cancelOrRefundReceived response with the following fields:
 	 * - pspReference: A new reference to uniquely identify this modification request. 
-	 * - response: A confirmation indicating we receievd the request: [cancelOrRefund-received]. 
+	 * - response: A confirmation indicating we received the request: [cancelOrRefund-received].
 	 * 
 	 * If the payment is authorised, but not yet captured, it will be cancelled. 
 	 * In other cases the payment will be fully refunded (if possible).

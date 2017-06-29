@@ -31,7 +31,7 @@
   * - browserInfo:     It is safe to use the values from the original authorise request, as they
   *                    are unlikely to change during the course of a payment.
   * - md:              The value of the MD parameter received from the issuer.
-  * - paReponse:       The value of the PaRes parameter received from the issuer.
+  * - paResponse:       The value of the PaRes parameter received from the issuer.
   * - shopperIP:       The IP address of the shopper. We recommend that you provide this data, as
   *                    it is used in a number of risk checks, for example, the number of payment
   *                    attempts and location based checks.

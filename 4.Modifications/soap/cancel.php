@@ -34,7 +34,7 @@
  
  /**
   * Perform cancel request by sending in a 
-  * modificationRequest, the protocol is defined 
+  * modificationRequest, the protocol is defined
   * in the WSDL. The following parameters are used:
   * - merchantAccount: The merchant account the payment was processed with.
   * - originalReference: This is the pspReference that was assigned to the authorisation
@@ -51,7 +51,7 @@
 	 * If the message was syntactically valid and merchantAccount is correct you will 
 	 * receive a cancelReceived response with the following fields:
 	 * - pspReference: A new reference to uniquely identify this modification request. 
-	 * - response: A confirmation indicating we receievd the request: [cancel-received]. 
+	 * - response: A confirmation indicating we received the request: [cancel-received].
 	 * 
 	 * Please note: The result of the cancellation is sent via a notification with eventCode CANCELLATION.
 	 */
