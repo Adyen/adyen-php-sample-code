@@ -42,9 +42,9 @@
   * - merchantAccount: The merchant account the payment was processed with.
   * - modificationAmount: The amount to capture
   * 	- currency: the currency must match the original payment
-  * 	- amount: the value must be the same or less than the original amount
+  * 	- value: the value must be the same or less than the original amount
   * - originalReference: This is the pspReference that was assigned to the authorisation
-  * - reference: If you wish, you can to assign your own reference or description to the modification. 
+  * - reference: If you wish, you can assign your own reference or description to the modification.
   */
  try{
 	 $result = $client->capture(array(
@@ -63,9 +63,9 @@
 	 * If the message was syntactically valid and merchantAccount is correct you will 
 	 * receive a captureResult response with the following fields:
 	 * - pspReference: A new reference to uniquely identify this modification request. 
-	 * - response: A confirmation indicating we receievd the request: [capture-received]. 
+	 * - response: A confirmation indicating we received the request: [capture-received].
 	 * 
-	 * Please note: The result of the cancellation is sent via a notification with eventCode CAPTURE.
+	 * Please note: The result of the capture is sent via a notification with eventCode CAPTURE.
 	 */
 	print_r($result);
 						

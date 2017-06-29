@@ -9,7 +9,7 @@
  * Please note: using our API requires a web service user. Set up your Webservice 
  * user: Adyen Test CA >> Settings >> Users >> ws@Company. >> Generate Password >> Submit 
  *  
- * @link	5.Recurring/httppost/submit-recurring-payment.php 
+ * @link	5.Recurring/soap/submit-recurring-payment.php
  * @author	Created by Adyen - Payments Made Easy
  */
  
@@ -45,7 +45,7 @@
   * - merchantAccount: The merchant account the payment was processed with.
   * - amount: The amount of the payment
   * 	- currency: the currency of the payment
-  * 	- amount: the amount of the payment
+  * 	- value: the amount of the payment
   * - reference: Your reference
   * - shopperEmail: The e-mail address of the shopper 
   * - shopperReference: The shopper reference, i.e. the shopper ID

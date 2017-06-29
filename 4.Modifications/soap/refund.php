@@ -38,9 +38,9 @@
   * modificationRequest, the protocol is defined 
   * in the WSDL. The following parameters are used:
   * - merchantAccount: The merchant account the payment was processed with.
-  * - modificationAmount: The amount to capture
+  * - modificationAmount: The amount to refund
   * 	- currency: the currency must match the original payment
-  * 	- amount: the value must be the same or less than the original amount
+  * 	- value: the value must be the same or less than the original amount
   * - originalReference: This is the pspReference that was assigned to the authorisation
   * - reference: If you wish, you can to assign your own reference or description to the modification. 
   */
@@ -61,7 +61,7 @@
 	 * If the message was syntactically valid and merchantAccount is correct you will 
 	 * receive a refundReceived response with the following fields:
 	 * - pspReference: A new reference to uniquely identify this modification request. 
-	 * - response: A confirmation indicating we receievd the request: [refund-received]. 
+	 * - response: A confirmation indicating we received the request: [refund-received].
 	 * 
 	 * Please note: The result of the refund is sent via a notification with eventCode REFUND.
 	 */
