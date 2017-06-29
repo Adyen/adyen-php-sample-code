@@ -36,7 +36,7 @@
     "originalReference" => "YourPspReference"
  );
 
- $result = $service->cancel($request);
+ $result = $service->cancelOrRefund($request);
 
  /**
  * If the message was syntactically valid and merchantAccount is correct you will receive a
