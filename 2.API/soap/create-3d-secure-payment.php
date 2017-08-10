@@ -103,7 +103,7 @@ try {
 					"houseNumberOrName" => "6-50",
 					"stateOrProvince" => "",
 					"country" => "NL"
-				)
+				),
 				"browserInfo" => array(
 					"userAgent" => $_SERVER['HTTP_USER_AGENT'],
 					"acceptHeader" => $_SERVER['HTTP_ACCEPT']
