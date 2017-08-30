@@ -1,0 +1,73 @@
+<?php
+/**
+* This PHP code provides an URL to a HPP payment form.
+*/
+
+
+/**
+* These account details can be found in CA TEST environment: https://ca-live.adyen.com/ca/ca/login.shtml
+*  $skinCode:        the skin to be used
+*  $merchantAccount: the merchant account we want to process this payment with.
+*  $hmackKey:        the shared HMAC key.
+*/   
+
+    $skinCode        = “yzrqpR13”; // your skinCode
+    $merchantAccount = “TestMerchant”; // your merchantAccount
+    $hmacKey         = "BDF9B2857654743441D2EE15FB3EEEF2159227FE0D114C2CD31772D2785977DC"; // your HMAC Key
+
+  
+/**
+* Payment-specific details. Note that many more fields can be added to the paymentRequest object. 
+* Please see the API Reference in the Adyen documentation for more information.
+*/
+
+    $paymentDetailsParams = array(
+      "merchantReference" => "Generated_payment_link_2", // your merchant reference
+      "merchantAccount"   =>  $merchantAccount, 
+      "currencyCode"      => "EUR", 
+      "shopperReference"  => "1850225", // Customer ID
+      "paymentAmount"     => "1234", // paymentAmount is in minor units (e.g. 1000 = 10.00)
+      "sessionValidity"   => "2018-07-14T10:31:06Z", // This value should be in the future
+      "skinCode"          => $skinCode
+      );
+
+
+/**
+* The following functions generate a payment URL based on the ppaymentRequest object.
+*/
+  
+    // The character escape function
+    $escapeval = function($val) {
+     return str_replace(':','\\:',str_replace('\\','\\\\',$val));
+    };
+    
+    // Sort the array by key using SORT_STRING order
+    ksort($paymentDetailsParams, SORT_STRING);
+
+    // Generate the signing data string
+    $paymentDetailsSignData = implode(":", array_map($escapeval,
+                                                                array_merge( array_keys($paymentDetailsParams), 
+                                                                             array_values($paymentDetailsParams)
+                                                                           )
+                                                    )
+                                      );
+    // base64-encode the binary result of the HMAC computation
+    $merchantSig = base64_encode(hash_hmac('sha256',$paymentDetailsSignData,pack("H*" , $hmacKey),true));
+        $paymentDetailsParams["merchantSig"] = $merchantSig;
+
+    // Generate URL
+    $paymentUrl = "https://test.adyen.com/hpp/pay.shtml?";
+    $parameterCount = 0;
+    foreach($paymentDetailsParams as $key => $value)
+    {
+      if($parameterCount == 0)
+        {
+          $paymentUrl .= $key."=".urlencode($value);
+          $parameterCount++;
+        }
+        else{
+          $paymentUrl .= "&".$key."=".urlencode($value);
+        }
+    }
+    echo $paymentUrl;
+?>
