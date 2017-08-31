@@ -1,6 +1,6 @@
 <?php
 /**
-* This PHP code provides an URL to a HPP payment form.
+* This PHP code generates a URL to an HPP payment form.
 */
 
 
@@ -8,7 +8,7 @@
 * These account details can be found in CA TEST environment: https://ca-test.adyen.com/ca/ca/login.shtml
 *  $skinCode:        the skin to be used
 *  $merchantAccount: the merchant account we want to process this payment with.
-*  $hmacKey:        the shared HMAC key.
+*  $hmacKey:         the shared HMAC key.
 */   
 
     $skinCode        = “yzrqpR13”; // your skinCode
