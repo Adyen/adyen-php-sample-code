@@ -11,8 +11,12 @@ We have made a library available that contains all of these APIs to make the int
 ## Code structure
 ```
 1. HPP (Hosted Payment Page)
-  - create-payment-on-hpp.php           : Simple form creating a payment on our HPP;
-  - create-payment-on-hpp-advanced.php  : Advanced form creating a payment on our HPP;
+  - check-payment-request-sha256.php    : Check the calculated signature with the signature from the URL parameters
+  - create-payment-on-HPP-SHA256.php    : Simple form creating a payment on our HPP
+  - create-payment-on-HPP-SHA256_advanced.php    : Advanced form creating a payment on our HPP
+  - create-payment-on-HPP-SHA256_openinvoice.php : Open Invoice form creating a payment on our HPP
+  - create-payment-on-HPP-SHA256_travelData.php  : Airline travel data form creating a payment on our HPP
+  - generate-payment-url-for-HPP-SHA256.php      : Generate a HPP payment link, based on a simple form
 2. API
   - JSON
     - authorise-3d-secure-payment.php   : Authorise a 3D Secure payment using JSON
