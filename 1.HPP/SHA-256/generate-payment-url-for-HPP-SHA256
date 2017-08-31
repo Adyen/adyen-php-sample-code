@@ -15,6 +15,13 @@
     $merchantAccount = “TestMerchant”; // your merchantAccount
     $hmacKey         = "BDF9B2857654743441D2EE15FB3EEEF2159227FE0D114C2CD31772D2785977DC"; // your HMAC Key
 
+    
+/**
+* Setting the default timezone for the sessionValidity.
+*/
+
+    date_default_timezone_set('Europe/Amsterdam');
+
   
 /**
 * Payment-specific details. Note that many more fields can be added to the paymentRequest object. 
@@ -22,12 +29,12 @@
 */
 
     $paymentDetailsParams = array(
-      "merchantReference" => "Generated_payment_link_2", // your merchant reference
+      "merchantReference" => "Generated_payment_link", // your merchant reference
       "merchantAccount"   =>  $merchantAccount, 
       "currencyCode"      => "EUR", 
       "shopperReference"  => "1850225", // Customer ID
       "paymentAmount"     => "1234", // paymentAmount is in minor units (e.g. 1000 = 10.00)
-      "sessionValidity"   => "2018-07-14T10:31:06Z", // This value should be in the future
+      "sessionValidity"   => date('Y-m-d\TH:i:s', strtotime("+ 2 days")), //Allows the session to be active for 2 days
       "skinCode"          => $skinCode
       );
 
