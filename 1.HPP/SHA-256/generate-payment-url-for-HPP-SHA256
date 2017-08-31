@@ -5,10 +5,10 @@
 
 
 /**
-* These account details can be found in CA TEST environment: https://ca-live.adyen.com/ca/ca/login.shtml
+* These account details can be found in CA TEST environment: https://ca-test.adyen.com/ca/ca/login.shtml
 *  $skinCode:        the skin to be used
 *  $merchantAccount: the merchant account we want to process this payment with.
-*  $hmackKey:        the shared HMAC key.
+*  $hmacKey:        the shared HMAC key.
 */   
 
     $skinCode        = “yzrqpR13”; // your skinCode
@@ -40,7 +40,7 @@
 
 
 /**
-* The following functions generate a payment URL based on the ppaymentRequest object.
+* The following functions generate a payment URL based on the paymentRequest object.
 */
   
     // The character escape function
