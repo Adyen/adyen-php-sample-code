@@ -101,7 +101,7 @@ $result = curl_exec($ch);
 if ($result === false)
 	echo "Error: " . curl_error($ch);
 else {
-  $result=json_decode($result);	
+  $result=json_decode($result, true);	
 	/**
 	 * Once your account is confgured for 3-D Secure, the Adyen system performs a directory
 	 * inquiry to verify that the card is enrolled in the 3-D Secure programme.
