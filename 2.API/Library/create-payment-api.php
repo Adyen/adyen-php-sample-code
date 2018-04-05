@@ -2,9 +2,10 @@
 /**
  * Create Payment through the API (PHP Library)
  *
- * Payments can be created through our API, however this is only possible if you are
- * PCI Compliant. PHP Library API payments are submitted using the authorise action.
- * We will explain a simple credit card submission.
+ * Payments can be created through our API, however, if you want to submit unencrypted 
+ * card information like the example in this file, you need to be PCI Compliant. PHP 
+ * Library API payments are submitted using the authorise action. We will explain a 
+ * simple credit card submission.
  *
  * Please note: using our API requires a web service user. Set up your Webservice
  * user: Adyen Test CA >> Settings >> Users >> ws@Company. >> Generate Password >> Submit
