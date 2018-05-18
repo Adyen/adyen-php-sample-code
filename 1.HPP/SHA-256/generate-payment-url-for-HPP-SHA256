@@ -11,8 +11,8 @@
 *  $hmacKey:         the shared HMAC key.
 */   
 
-    $skinCode        = “yzrqpR13”; // your skinCode
-    $merchantAccount = “TestMerchant”; // your merchantAccount
+    $skinCode        = "yzrqpR13"; // your skinCode
+    $merchantAccount = "TestMerchant"; // your merchantAccount
     $hmacKey         = "BDF9B2857654743441D2EE15FB3EEEF2159227FE0D114C2CD31772D2785977DC"; // your HMAC Key
 
     
@@ -76,5 +76,5 @@
           $paymentUrl .= "&".$key."=".urlencode($value);
         }
     }
-    echo $paymentUrl;
+    echo htmlentities($paymentUrl);
 ?>
