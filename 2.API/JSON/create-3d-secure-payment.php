@@ -81,9 +81,9 @@ $request =array(
 		"number" => "5212345678901234",
 		"cvc" => "737"
 	),
-	"browserInfo"=>array(
-		"acceptHeader"=>$_SERVER['HTTP_USER_AGENT'],
-		"userAgent"=>$_SERVER['HTTP_ACCEPT']
+	"browserInfo" => array(
+		"acceptHeader" => $_SERVER['HTTP_ACCEPT'],
+		"userAgent" => $_SERVER['HTTP_USER_AGENT']
 	)
 );
  
